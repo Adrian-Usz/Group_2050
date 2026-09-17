@@ -1,23 +1,14 @@
 class Product:
-    def __init__(self, product_id, name, price):
-        if (type(product_id) == str):
-            self.product_id = product_id
-        else:
-            raise TypeError
-        
-        if (type(name) == str):
-            self.name = name
-        else:
-            raise TypeError
+    def __init__(self, product_id: str, name: str, price: float):
+        self.product_id = product_id
+        self.name = name
+        self.price = price
 
-        if (type(price) == float):
-            self.price = price
-        else:
-            raise TypeError
-
-    def get_id(self):
+    def get_id(self) -> str:
         return self.product_id
-    def get_name(self):
+
+    def get_name(self) -> str:
         return self.name
-    def get_price(self):
+
+    def get_price(self) -> float:
         return self.price

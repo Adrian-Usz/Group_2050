@@ -1,16 +1,11 @@
+from cart import ShoppingCart
+
+
 class Customer:
-    def __init__(self, customer_id, name):
+    def __init__(self, customer_id: str, name: str) -> None:
         self.cart = ShoppingCart()
-
-        if (type(customer_id) == str):
-            self.customer_id = customer_id
-        else:
-            raise TypeError
-
-        if (type(name) == str):
-            self.name = name
-        else:
-            raise TypeError
+        self.customer_id = customer_id
+        self.name = name
 
     def get_id(self):
         return self.customer_id
@@ -20,4 +15,3 @@ class Customer:
 
     def get_cart(self):
         return self.cart
-    
