@@ -2,7 +2,7 @@ from cart import ShoppingCart
 
 
 class Customer:
-    def __init__(self, customer_id: str, name: str) -> None:
+    def __init__(self, customer_id: str, name: str):
         self.cart = ShoppingCart()
         self.customer_id = customer_id
         self.name = name
