@@ -1,3 +1,5 @@
+from product import Product
+
 class ShoppingCart:
     """Shows the products in a given's customers shopping cart"""
     def __init__(self):
