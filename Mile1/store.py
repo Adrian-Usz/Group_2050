@@ -1,3 +1,5 @@
+from product import Product
+
 class Store:
     """Represents a store which manages all the products and customers"""
     def __init__(self):
