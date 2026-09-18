@@ -4,7 +4,7 @@ class ShoppingCart:
         """creates a new shopping cart with no items"""
         self.items = []
 
-    def add_product(self, product: Product):
+    def add_product(self, product):
         """adds products to the shopping cart"""
         self.items.append(product)
 
