@@ -3,12 +3,3 @@ class Product:
         self.product_id = product_id
         self.name = name
         self.price = price
-
-    def get_id(self) -> str:
-        return self.product_id
-
-    def get_name(self) -> str:
-        return self.name
-
-    def get_price(self) -> float:
-        return self.price
