@@ -56,5 +56,7 @@ class Store:
         customer = self.find_customer(customer_id)
         if customer is None:
             return None
-        cart = customer.get_
+        cart = customer.get_cart()
+            if cart.is_empty()
+        
 
