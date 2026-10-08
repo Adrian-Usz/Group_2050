@@ -58,5 +58,22 @@ class Store:
             return None
         cart = customer.get_cart()
             if cart.is_empty()
+                return None
+        self._order += 1
+        order = Order(f"O{self._order_counter}", customer, cart.get_items())
+        self.orders.append(order)
+        self.order_queue.enqueue(order)
+        cart.clear()
+        return order
+    def process_next_order(self) -> Order | None:
+        order = self.order_queue.dequeue()
+         if order is None:
+            return None
+        order.set_status("PROCESSING")
+        self.order_history.push(order)
+        return order
+
+    def get_order_history(self) -> list[Order]:
+        return self.order_history.to_list()
         
 
