@@ -35,3 +35,5 @@ class ShoppingCart:
             return True
         else:
             return False
+        def clear(self) -> None:
+            self.items.clear()
