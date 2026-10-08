@@ -2,7 +2,7 @@ from linked_list import LinkedList
 
 
 class Stack:
-    """Store items with last-in, first-out access."""
+    """Store items with LIFO access."""
 
     def __init__(self) -> None:
         """Create an empty stack backed by a linked list."""
