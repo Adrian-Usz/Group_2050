@@ -1,6 +1,6 @@
 class Product:
     """This represents a product sold by the store"""
-    def __init__(self, product_id: str, name: str, price: float):
+    def __init__(self, product_id: str, name: str, price: float) -> None:
         """This creates a product with an ID, listed as a string, a name (also a string), and price (float)"""
         
         self.product_id = product_id
