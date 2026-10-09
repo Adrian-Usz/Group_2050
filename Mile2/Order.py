@@ -9,7 +9,7 @@ class Order:
     self._items = list(items)
     self._status = "PENDING"
     
-  def get_id(self) ->" str:
+  def get_id(self) -> str:
     return self._order_id
 
   def get_customer(self) -> Customer:

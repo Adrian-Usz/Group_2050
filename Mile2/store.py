@@ -1,7 +1,7 @@
 from product import Product
-order import Order
-order_queue import OrderQueue
-stack import Stack
+from order import Order
+from order_queue import OrderQueue
+from stack import Stack
 
 class Store:
     """Represents a store which manages all the products and customers"""
@@ -57,17 +57,17 @@ class Store:
         if customer is None:
             return None
         cart = customer.get_cart()
-            if cart.is_empty()
-                return None
+        if cart.is_empty():
+            return None
         self._order += 1
         order = Order(f"O{self._order_counter}", customer, cart.get_items())
         self.orders.append(order)
-        self.order_queue.enqueue(order)
+        self.orderqueue.enqueue(order)
         cart.clear()
         return order
     def process_next_order(self) -> Order | None:
-        order = self.order_queue.dequeue()
-         if order is None:
+        order = self.orderqueue.dequeue()
+        if order is None:
             return None
         order.set_status("PROCESSING")
         self.order_history.push(order)
