@@ -1,5 +1,5 @@
 from node import Node
-
+from collections.abc import Iterator
 
 class LinkedList:
     """Store items in connected nodes while tracking head, tail, and size."""
@@ -25,7 +25,7 @@ class LinkedList:
             self._head = node
         else:
             self._tail.next = node
-            self._tail = node
+        self._tail = node
         self._count += 1
 
     def remove_first(self) -> object | None:

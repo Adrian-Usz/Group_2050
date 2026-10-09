@@ -20,7 +20,7 @@ class ShoppingCart:
 
     def get_items(self):
         """returns the products current in the shopping cart"""
-        return self.items
+        return list(self.items)
 
     def calculate_total(self):
         """Returns the total price of all products in the shopping cart"""
@@ -35,5 +35,6 @@ class ShoppingCart:
             return True
         else:
             return False
-        def clear(self) -> None:
-            self.items.clear()
+    
+    def clear(self) -> None:
+        self.items.clear()

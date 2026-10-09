@@ -11,7 +11,7 @@ class Store:
         self.customers = []
         self.orders = []
         self.orderqueue = OrderQueue()
-        self.orderhistory = Stack()
+        self.order_history = Stack()
         self.ordercounter = 0
 
     def add_product(self, product):
@@ -43,11 +43,12 @@ class Store:
             if (self.customers[i].get_id() == customer_id):
                 return self.customers[i]
         return None
+    
     def find_order(self, order_id: str) -> Order | None:
         for order in self.orders:
-            if order.get_id() == order.id:
+            if order.get_id() == order_id:
                 return order
-            return None
+        return None
             
     def get_orders(self) -> list[Order]:
         return list(self.orders)
@@ -59,12 +60,13 @@ class Store:
         cart = customer.get_cart()
         if cart.is_empty():
             return None
-        self._order += 1
-        order = Order(f"O{self._order_counter}", customer, cart.get_items())
+        self.ordercounter += 1
+        order = Order(f"O{self.ordercounter}", customer, cart.get_items())
         self.orders.append(order)
         self.orderqueue.enqueue(order)
         cart.clear()
         return order
+    
     def process_next_order(self) -> Order | None:
         order = self.orderqueue.dequeue()
         if order is None:
