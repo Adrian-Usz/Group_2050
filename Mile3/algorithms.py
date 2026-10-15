@@ -1,5 +1,9 @@
 def recursive_total_price(products) -> float:
 
+    
+
+    
+
 def fewest_coins(coins, amount) -> int:
 
 def bubble_sort(products) -> None:
@@ -26,3 +30,12 @@ def insertion_sort(products) -> None:
             j += 1
 
 def binary_search(products, product_id) -> int:
+    if len(products) == 0:
+        return -1
+    median = len(products) // 2
+    if product_id == products[median].get_id():
+        return median
+    elif product_id < products[median].get_id():
+        return binary_search(products[:median], product_id)
+    elif product_id > products[median].get_id():
+        return binary_search(products[median + 1:], product_id)

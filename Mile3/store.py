@@ -87,12 +87,9 @@ class Store:
 
     def insertion_sort_products(self) -> None:
         insertion_sort(self.products)
-        
+
     def binary_search_product(product_id: str) -> Product | None:
 
     def recursive_catalog_total(self) -> float:
 
     def calculate_change(coins: list[int], amount: int) -> int:
-    
-        
-
