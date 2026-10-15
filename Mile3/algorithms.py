@@ -1,0 +1,28 @@
+def recursive_total_price(products) -> float:
+
+def fewest_coins(coins, amount) -> int:
+
+def bubble_sort(products) -> None:
+    for j in range(len(products) - 1):
+            for i in range(len(products) - 1 - j):
+                if products[i].get_id() > products[i+1].get_id():
+                    products[i], products[i+1] = products[i+1], products[i]
+
+def selection_sort(products) -> None:
+    n = len(products)
+    for i in range(n-1):
+        index_of_max = 0
+        for index in range(n-i):
+            if products[index].get_id() > products[index_of_max].get_id():
+                index_of_max = index
+        products[n - i - 1], products[index_of_max] = products[index_of_max], products[n - i -1]
+
+def insertion_sort(products) -> None:
+    n = len(products)
+    for i in range(n):
+        j = n - i - 1
+        while j < n - 1 and (products[j].get_id() > products[j+1].get_id()):
+            products[j], products[j+1] = products[j+1], products[j]
+            j += 1
+
+def binary_search(products, product_id) -> int:
