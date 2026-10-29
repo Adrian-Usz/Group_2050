@@ -70,7 +70,7 @@ def binary_search(products, product_id, left=0, right=None) -> int:
 def store_binary_search(products, product_id) -> int:
     """"performs binary search on product list and returns product"""
     if len(products) == 0:
-        return -1
+        return None
     median = len(products) // 2
     if product_id == products[median].get_id():
         return products[median]
