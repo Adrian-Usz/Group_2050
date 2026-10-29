@@ -93,7 +93,7 @@ class Store:
 
     def binary_search_product(self, product_id: str) -> Product | None:
         """binary search on products"""
-        return binary_search(self.products, product_id)
+        return store_binary_search(self.products, product_id)
 
     def recursive_catalog_total(self) -> float:
         """recursively calculates total price"""

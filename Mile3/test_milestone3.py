@@ -44,8 +44,8 @@ class Test(unittest.TestCase):
         keyboard = Product("P101", "Keyboard", 59.99)
         headphones = Product("P102", "Headphones", 39.99)
         a = [mouse, keyboard, headphones]
-        self.assertEqual(binary_search(a, "P100"), mouse)
-        self.assertEqual(binary_search(a, "P101"), keyboard)
+        self.assertEqual(binary_search(a, "P100"), 0)
+        self.assertEqual(binary_search(a, "P101"), 1)
         self.assertEqual(binary_search(a, "P103"), -1)
     def test_store_integration(self):
         #3 tests, sort integration, binary lookup, change calculation

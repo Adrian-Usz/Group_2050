@@ -4,7 +4,14 @@ def recursive_total_price(products) -> float:
         return 0.0
     return products[-1].price + recursive_total_price(products[:-1])
 
-def fewest_coins(coins, amount, memo = None) -> int:
+def fewest_coins(coins, amount, memo = None):
+    result = _fewest_coins(coins, amount, memo)
+    if result == float('inf'):
+        return -1
+    else:
+        return result
+
+def _fewest_coins(coins, amount, memo = None) -> int:
     """finds fewest coins to return change"""
     if memo is None:
         memo = {}
@@ -16,7 +23,7 @@ def fewest_coins(coins, amount, memo = None) -> int:
         return memo[amount]
     best = float('inf')
     for coin in coins:
-        best = min(best, 1 + fewest_coins(coins, amount - coin, memo))
+        best = min(best, 1 + _fewest_coins(coins, amount - coin, memo))
     memo[amount] = best
     return best
 
@@ -46,14 +53,28 @@ def insertion_sort(products) -> None:
             products[j], products[j+1] = products[j+1], products[j]
             j += 1
 
-def binary_search(products, product_id) -> int:
-    """"performs binary search on product list"""
+def binary_search(products, product_id, left=0, right=None) -> int:
+    """Performs binary search and returns index"""
+    if right is None:
+        right = len(products) - 1
+    if right < left:
+        return -1
+    median = (left + right) // 2
+    if product_id == products[median].get_id():
+        return median
+    elif product_id < products[median].get_id():
+        return binary_search(products, product_id, left, median - 1)
+    else:
+        return binary_search(products, product_id, median + 1, right)
+
+def store_binary_search(products, product_id) -> int:
+    """"performs binary search on product list and returns product"""
     if len(products) == 0:
         return -1
     median = len(products) // 2
     if product_id == products[median].get_id():
         return products[median]
     elif product_id < products[median].get_id():
-        return binary_search(products[:median], product_id)
+        return store_binary_search(products[:median], product_id)
     elif product_id > products[median].get_id():
-        return binary_search(products[median + 1:], product_id)
+        return store_binary_search(products[median + 1:], product_id)
