@@ -1,9 +1,11 @@
 def recursive_total_price(products) -> float:
+    """calculates total price of products recursively"""
     if products == []:
         return 0.0
     return products[-1].price + recursive_total_price(products[:-1])
 
 def fewest_coins(coins, amount, memo = None) -> int:
+    """finds fewest coins to return change"""
     if memo is None:
         memo = {}
     if amount == 0:
@@ -19,12 +21,14 @@ def fewest_coins(coins, amount, memo = None) -> int:
     return best
 
 def bubble_sort(products) -> None:
+    """bubble sorts product list"""
     for j in range(len(products) - 1):
             for i in range(len(products) - 1 - j):
                 if products[i].get_id() > products[i+1].get_id():
                     products[i], products[i+1] = products[i+1], products[i]
 
 def selection_sort(products) -> None:
+    """selection sorts product list"""
     n = len(products)
     for i in range(n-1):
         index_of_max = 0
@@ -34,6 +38,7 @@ def selection_sort(products) -> None:
         products[n - i - 1], products[index_of_max] = products[index_of_max], products[n - i -1]
 
 def insertion_sort(products) -> None:
+    """"insertion sorts product list"""
     n = len(products)
     for i in range(n):
         j = n - i - 1
@@ -42,6 +47,7 @@ def insertion_sort(products) -> None:
             j += 1
 
 def binary_search(products, product_id) -> int:
+    """"performs binary search on product list"""
     if len(products) == 0:
         return -1
     median = len(products) // 2

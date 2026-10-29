@@ -80,19 +80,25 @@ class Store:
         return self.order_history.to_list()
 
     def bubble_sort_products(self) -> None:
+        """bubble sorts products"""
         bubble_sort(self.products)
 
     def selection_sort_products(self) -> None:
+        """selection sorts products"""
         selection_sort(self.products)
 
     def insertion_sort_products(self) -> None:
+        """insertion sorts products"""
         insertion_sort(self.products)
 
     def binary_search_product(self, product_id: str) -> Product | None:
+        """binary search on products"""
         return binary_search(self.products, product_id)
 
     def recursive_catalog_total(self) -> float:
+        """recursively calculates total price"""
         return recursive_total_price(self.products)
 
     def calculate_change(self, coins: list[int], amount: int) -> int:
+        """finds fewest coins to give change"""
         return fewest_coins(coins, amount)
