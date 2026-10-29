@@ -14,7 +14,7 @@ def fewest_coins(coins, amount, memo = None) -> int:
         return memo[amount]
     best = float('inf')
     for coin in coins:
-        best = min(best, 1 + fewest_coins(amount - coin, coins, memo))
+        best = min(best, 1 + fewest_coins(coins, amount - coin, memo))
     memo[amount] = best
     return best
 
@@ -46,7 +46,7 @@ def binary_search(products, product_id) -> int:
         return -1
     median = len(products) // 2
     if product_id == products[median].get_id():
-        return median
+        return products[median]
     elif product_id < products[median].get_id():
         return binary_search(products[:median], product_id)
     elif product_id > products[median].get_id():
