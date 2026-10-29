@@ -1,7 +1,7 @@
 complexity
 
 Operation						Worst
-Recrusive_total_price			O(2^n)
+Recursive_total_price			O(n^2)
 fewest_coins					O(n)
 bubble_sort						O(n^2)
 selection_sort					O(n^2)
@@ -10,4 +10,4 @@ binary_search					O(n)
 Store.bubble_sort_products		O(n^2)
 Store.selection_sort_products	O(n^2)
 Store.insertion_sort_products	O(n^2)
-Store.binary_search_products	O(n^2)
+Store.binary_search_products	O(n)
