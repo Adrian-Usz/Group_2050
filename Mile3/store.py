@@ -94,5 +94,5 @@ class Store:
     def recursive_catalog_total(self) -> float:
         return recursive_total_price(self.products)
 
-    def calculate_change(coins: list[int], amount: int) -> int:
+    def calculate_change(self, coins: list[int], amount: int) -> int:
         return fewest_coins(coins, amount)
