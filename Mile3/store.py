@@ -88,8 +88,11 @@ class Store:
     def insertion_sort_products(self) -> None:
         insertion_sort(self.products)
 
-    def binary_search_product(product_id: str) -> Product | None:
+    def binary_search_product(self, product_id: str) -> Product | None:
+        binary_search(self.products, product_id)
 
     def recursive_catalog_total(self) -> float:
+        recursive_total_price(self.products)
 
     def calculate_change(coins: list[int], amount: int) -> int:
+        fewest_coins(coins, amount)

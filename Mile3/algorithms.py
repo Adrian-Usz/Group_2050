@@ -1,10 +1,22 @@
 def recursive_total_price(products) -> float:
+    if products == []:
+        return 0.0
+    return products[-1].price + recursive_total_price(products[:-1])
 
-    
-
-    
-
-def fewest_coins(coins, amount) -> int:
+def fewest_coins(coins, amount, memo = None) -> int:
+    if memo is None:
+        memo = {}
+    if amount == 0:
+        return 0
+    if amount < 0:
+        return float('inf')
+    if amount in memo:
+        return memo[amount]
+    best = float('inf')
+    for coin in coins:
+        best = min(best, 1 + fewest_coins(amount - coin, coins, memo))
+    memo[amount] = best
+    return best
 
 def bubble_sort(products) -> None:
     for j in range(len(products) - 1):
